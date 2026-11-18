@@ -1,2 +1,7 @@
-*        @beknumonov @second-account-username
-/infra/  @beknumonov @second-account-username
+# Default owners for everything.
+*                    @beknumonov @REAL_USERNAME
+# Infrastructure (OpenTofu) — later a stricter owner, e.g. a platform team.
+/infra/              @beknumonov @REAL_USERNAME
+# Pipeline definitions: a change here can run code with your secrets or on
+# your laptop runner, so it always needs a code-owner review.
+/.github/workflows/  @beknumonov @REAL_USERNAME
