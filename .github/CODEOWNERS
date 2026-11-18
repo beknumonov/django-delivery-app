@@ -1,5 +1,2 @@
-# Owner of everything: must approve any PR (with "Require review from Code Owners").
-*        @beknumonov
-# Infrastructure gets its own line so it can later have a different, stricter
-# owner (e.g. a platform team). The LAST matching line wins.
-/infra/  @beknumonov
+*        @beknumonov @second-account-username
+/infra/  @beknumonov @second-account-username
