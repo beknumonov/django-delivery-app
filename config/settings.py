@@ -245,3 +245,13 @@ LOGGING = {
     },
     "root": {"handlers": ["console"], "level": env("LOG_LEVEL", "INFO")},
 }
+
+
+# django-migration-linter is a DEV dependency (CI only). Register it when it
+# is installed, so the production image — which doesn't have it — still boots.
+try:
+    import django_migration_linter  # noqa: F401
+
+    INSTALLED_APPS.append("django_migration_linter")
+except ImportError:
+    pass

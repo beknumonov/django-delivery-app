@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Opens PRs that bump pinned action SHAs (and the "# vX.Y.Z" comment).
+  # Without this, SHA pinning means you silently fall behind on security fixes.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  # Same for Python dependencies in uv.lock.
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly
