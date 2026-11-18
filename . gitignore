@@ -1,0 +1,14 @@
+# Local virtualenv (recreated by `uv sync`)
+.venv/
+# Python bytecode
+__pycache__/
+*.pyc
+# Local dev database
+db.sqlite3
+# Output of collectstatic (built inside the image instead)
+staticfiles/
+# Real secrets — NEVER commit
+.env
+# Tool caches
+.pytest_cache/
+.ruff_cache/

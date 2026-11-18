@@ -1,0 +1,42 @@
+[project]
+name = "django-delivery-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "sardorbek", email = "numonovsardorbek@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "boto3>=1.44.4",
+    "django>=5.2,<5.3",
+    "django-prometheus>=2.4.0",
+    "gunicorn>=27.0.1",
+    "psycopg[binary]>=3.3.9",
+    "whitenoise>=6.12.0",
+]
+
+
+[dependency-groups]
+dev = [
+    "django-migration-linter>=7.0.0",
+    "pytest-django>=4.14.0",
+    "ruff>=0.17.5",
+]
+
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"  # which settings pytest-django loads
+testpaths = ["tests"]                       # only search tests/ for tests
+addopts = "-ra"                             # print a summary of skipped/failed tests
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = ["notes/migrations"]       # generated code: don't lint
+
+[tool.ruff.lint]
+# E/W pycodestyle style · F pyflakes (unused imports, undefined names)
+# I import sorting · B bugbear (likely bugs) · UP modern Python syntax
+# DJ Django-specific checks
+select = ["E", "F", "W", "I", "B", "UP", "DJ"]
