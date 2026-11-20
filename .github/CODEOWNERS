@@ -1,7 +1,6 @@
-# Default owners for everything.
-*                    @beknumonov @REAL_USERNAME
-# Infrastructure (OpenTofu) — later a stricter owner, e.g. a platform team.
-/infra/              @beknumonov @REAL_USERNAME
-# Pipeline definitions: a change here can run code with your secrets or on
-# your laptop runner, so it always needs a code-owner review.
-/.github/workflows/  @beknumonov @REAL_USERNAME
+# Solo project: I own everything. Reviews are auto-requested from me, but not
+# required to merge (see docs/m1.md). Add a second owner here when someone joins.
+*                    @beknumonov
+/infra/              @beknumonov
+# Pipeline changes can run code with secrets or on the laptop runner.
+/.github/workflows/  @beknumonov
